@@ -1,0 +1,37 @@
+[
+  {
+    "filename": "dpia_talentmatch.pdf",
+    "size_bytes": 51380,
+    "uploaded_at": "2026-09-14T12:17:50.120102+00:00",
+    "Type": "DPIA",
+    "preview": "Valutazione d'impatto sulla protezione dei dati (DPIA) - Sistema TalentMatch 1. Oggetto e ambito La presente Valutazione d'impatto sulla protezione dei dati (DPIA) riguarda il sistema TalentMatch, un sistema di intelligenza artificiale utilizzato da Acme Talent S.r.l. per la preselezione automatizza"
+  },
+  {
+    "filename": "documentazione_tecnica_talentmatch.pdf",
+    "size_bytes": 51164,
+    "uploaded_at": "2026-09-14T12:17:50.297057+00:00",
+    "Type": "Documentazione tecnica",
+    "preview": "Documentazione tecnica - Sistema di IA TalentMatch v2.3.1 1. Identificazione del sistema Nome: TalentMatch. Versione corrente: 2.3.1. Fornitore: Acme Talent S.r.l., Bologna (IT). TalentMatch è un sistema di IA per la preselezione dei candidati basato su un modello di linguaggio addestrato a estrarre"
+  },
+  {
+    "filename": "procedura_gestione_incidenti.pdf",
+    "size_bytes": 47640,
+    "uploaded_at": "2026-09-14T12:17:50.493879+00:00",
+    "Type": "Procedura operativa",
+    "preview": "Procedura di gestione degli incidenti di sicurezza e di funzionamento 1. Scopo La presente procedura definisce le modalità di gestione degli incidenti di sicurezza e di funzionamento dei sistemi informativi di Acme Talent S.r.l., incluso il sistema TalentMatch. La procedura è stata testata con eserc"
+  },
+  {
+    "filename": "regolamento_ferie_permessi.pdf",
+    "size_bytes": 44362,
+    "uploaded_at": "2026-09-14T12:17:50.634155+00:00",
+    "Type": "Policy HR",
+    "preview": "Regolamento aziendale ferie, permessi e smart working 1. Ferie annuali Ogni dipendente a tempo pieno matura 26 giorni di ferie per anno solare, in proporzione per i rapporti part-time. Le ferie devono essere richieste tramite il portale HR con almeno 7 giorni di preavviso e approvate dal responsabil"
+  },
+  {
+    "filename": "guida_stampanti_ufficio.pdf",
+    "size_bytes": 42989,
+    "uploaded_at": "2026-09-14T12:19:03.698582+00:00",
+    "Type": "Guida IT",
+    "preview": "Guida alla configurazione delle stampanti di rete 1. Stampanti disponibili La sede dispone di tre stampanti multifunzione di rete: PRN-PT1 (piano terra, sala riunioni), PRN-P1 (primo piano, open space) e PRN-P2 (secondo piano, amministrazione). Tutte supportano stampa fronte-retro, scansione a e-mai"
+  }
+]

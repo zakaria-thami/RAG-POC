@@ -1,0 +1,270 @@
+[
+  {
+    "question_id": "AI_ACT-01",
+    "query_text": "Il sistema di IA è immesso sul mercato o messo in servizio nell'Unione, oppure l'output prodotto dal sistema è utilizzato nell'Unione (anche se il fornitore è stabilito in un paese terzo)?",
+    "regulation_target": "aiact",
+    "regulation_articles": [
+      "art_2"
+    ],
+    "answer_yes_when": "Il sistema è venduto/licenziato nell'UE, è installato o fornito a deployer nell'UE, oppure i log o contratti mostrano uso effettivo dell'output nell'Unione.",
+    "answer_no_when": "Il sistema non è mai messo a disposizione nell'UE, non è fornito a deployer nell'UE e non ci sono prove che il suo output sia utilizzato nell'Unione.",
+    "answer_abstain_when": "Il sistema è disponibile tecnicamente per l'UE ma non ci sono evidenze chiare di vendita o uso (es. sito accessibile dall'UE senza vendite/contratti)."
+  },
+  {
+    "question_id": "AI_ACT-02",
+    "query_text": "Il sistema è messo a disposizione sul mercato dell'Unione per la distribuzione o l'uso nell'ambito di un'attività commerciale (vendita, licenza, fornitura a deployer), anziché essere sviluppato e usato esclusivamente per ricerca interna o uso personale non professionale?",
+    "regulation_target": "aiact",
+    "regulation_articles": [
+      "art_3",
+      "art_2"
+    ],
+    "answer_yes_when": "Esistono contratti di vendita o licenza, canali di distribuzione, o il sistema è offerto a terzi per uso commerciale nell'UE.",
+    "answer_no_when": "Il sistema è usato esclusivamente per ricerca e sviluppo interno o da persone fisiche per attività personali non professionali, senza commercializzazione.",
+    "answer_abstain_when": "Il codice è pubblicato open source o è disponibile su richiesta ma senza evidenze chiare di vendita o licenze commerciali."
+  },
+  {
+    "question_id": "AI_ACT-03",
+    "query_text": "Le istruzioni per l'uso, la documentazione tecnica o il materiale di vendita dichiarano in modo chiaro la finalità prevista del sistema, il contesto d'uso e i limiti operativi (cioè per quali attività il sistema è previsto e per quali no)?",
+    "regulation_target": "aiact",
+    "regulation_articles": [
+      "art_3",
+      "art_13"
+    ],
+    "answer_yes_when": "La finalità è descritta esplicitamente nelle istruzioni per l'uso, nella documentazione tecnica o nel materiale di vendita, con esempi di contesto e limiti.",
+    "answer_no_when": "Non esiste una descrizione chiara della finalità o il materiale usa frasi vaghe senza esempi concreti di contesto d'uso.",
+    "answer_abstain_when": "La finalità è accennata ma mancano i contesti d'uso o i limiti operativi; esiste solo un claim commerciale generico."
+  },
+  {
+    "question_id": "AI_ACT-04",
+    "query_text": "L'uso previsto del sistema coinvolge specifiche categorie di persone fisiche (es. candidati al lavoro, pazienti, utenti di servizi pubblici) che possono subire conseguenze rilevanti per i loro diritti fondamentali, la salute, la sicurezza o l'accesso a servizi essenziali?",
+    "regulation_target": "aiact",
+    "regulation_articles": [
+      "art_27",
+      "art_6"
+    ],
+    "answer_yes_when": "Nel contesto d'uso il sistema prende decisioni o produce output che possono influire su accesso a servizi, risultati occupazionali, protezione della salute o diritti fondamentali di categorie identificate.",
+    "answer_no_when": "Il sistema svolge funzioni interne o operative che non hanno impatto rilevante sui diritti, sulla salute, sulla sicurezza o sull'accesso a servizi essenziali di persone fisiche.",
+    "answer_abstain_when": "Esistono scenari d'uso potenziali non ancora definiti o dipendenti da integrazioni future che potrebbero ampliare l'impatto su persone; oppure mancano analisi delle categorie di utenti."
+  },
+  {
+    "question_id": "AI_ACT-05",
+    "query_text": "Il sistema interagisce direttamente con persone fisiche e, in caso affermativo, gli interessati sono informati al primo contatto che stanno interagendo con un sistema di IA (o l'informazione risulta ovvia a una persona ragionevolmente informata)?",
+    "regulation_target": "aiact",
+    "regulation_articles": [
+      "art_50"
+    ],
+    "answer_yes_when": "C'è un avviso, banner o messaggio al primo contatto che segnala l'uso di IA; l'informazione è fornita in modo leggibile e accessibile.",
+    "answer_no_when": "Non esistono messaggi o avvisi alla prima interazione e non ci sono elementi che rendano ovvio all'utente che sta interagendo con IA.",
+    "answer_abstain_when": "L'informazione è presente solo nella documentazione scaricabile o negli termini di servizio, non al primo contatto; oppure è ambigua."
+  },
+  {
+    "question_id": "L132-01",
+    "query_text": "Il sistema genera o manipola contenuti audio, video o immagini che riproducono persone reali in modo artificiale (deepfake) e questi contenuti vengono destinati alla diffusione o all'uso esterno all'organizzazione (siti, social, comunicazioni verso utenti o clienti)?",
+    "regulation_target": "legge_132_2025",
+    "regulation_articles": [
+      "art_1"
+    ],
+    "answer_yes_when": "Il sistema produce o modifica file audio/video/immagini che riproducono persone reali (volti, voci, movimenti) e tali file sono effettivamente inviati, pubblicati o messi a disposizione di utenti esterni o canali pubblici.",
+    "answer_no_when": "Il sistema non genera né manipola contenuti rappresentanti persone reali, oppure produce solo contenuti sintetici destinati esclusivamente ad uso interno (test, ricerca) senza alcuna diffusione esterna.",
+    "answer_abstain_when": "Produzione limitata a ambiente di test o staging; il sistema genera solo elementi non riconducibili a persone reali (es. avatar fittizi) o non è chiaro dai registri se le uscite contengono parti sintetiche rilevanti; produzione delegata a terzi senza documentazione; esiste generazione ma manca evidenza della destinazione esterna."
+  },
+  {
+    "question_id": "L132-02",
+    "query_text": "Sono pendenti cause civili, richieste di risarcimento o procedimenti giudiziari in cui si contesta il funzionamento, l'affidabilità o gli effetti del vostro sistema di intelligenza artificiale?",
+    "regulation_target": "legge_132_2025",
+    "regulation_articles": [
+      "art_17"
+    ],
+    "answer_yes_when": "Esiste almeno una causa civile, una richiesta di risarcimento formale o una comunicazione di controversia relativa al funzionamento, agli output o agli effetti del sistema IA che vi coinvolge.",
+    "answer_no_when": "Non ci sono cause civili pendenti né richieste formali di risarcimento o contestazioni giudiziarie in corso riguardanti il sistema IA.",
+    "answer_abstain_when": "Esistono segnalazioni informali, lettere di diffida non ancora formalizzate in cause, o controversie in fase di valutazione legale ma non ancora notificate ufficialmente."
+  },
+  {
+    "question_id": "L132-03",
+    "query_text": "Mancano i registri operativi (log di esecuzione) e il versioning necessari per ricostruire, a livello tecnico, le decisioni o gli output significativi del sistema (timestamped input/output, versione del modello, parametri di esecuzione, identificativo della run)?",
+    "regulation_target": "legge_132_2025",
+    "regulation_articles": [
+      "art_3"
+    ],
+    "answer_yes_when": "La documentazione e i log sono invece completi e permettono di ricostruire una decisione (ma ricordate che la domanda chiede se mancano: rispondete SI solo se la mancanza c'è).",
+    "answer_no_when": "Esistono log corredati da timestamp, versioning dei modelli, e procedure documentate per ricostruire una decisione: quindi la mancanza non si verifica (risposta conforme: NO).",
+    "answer_abstain_when": "I log esistono ma non sono conservati per un periodo utile, manca la correlazione input-output, o il versioning è frammentario: la ricostruzione è parziale o richiede lavoro manuale significativo."
+  },
+  {
+    "question_id": "L132-04",
+    "query_text": "Mancano procedure documentate e testate per la gestione degli incidenti di sicurezza e di funzionamento del sistema (playbook di incident response, ruoli e responsabilità, criteri di escalation, tempi di risposta)?",
+    "regulation_target": "legge_132_2025",
+    "regulation_articles": [
+      "art_3"
+    ],
+    "answer_yes_when": "La domanda è al negativo: rispondete SI solo se effettivamente manca la procedura o non è stata testata.",
+    "answer_no_when": "Esistono procedure documentate, responsabilità assegnate e prove di esercitazioni o test; quindi la mancanza non sussiste (risposta conforme: NO).",
+    "answer_abstain_when": "Esiste una procedura generale di sicurezza ma non specifica per il sistema IA, o la procedura esiste ma non risulta testata o aggiornata di recente."
+  },
+  {
+    "question_id": "L132-05",
+    "query_text": "Mancano registrazioni e un registro degli incidenti (timeline, impatto, root cause, azioni correttive e verifiche successive) relativi alle anomalie, ai malfunzionamenti o agli eventi di sicurezza del sistema?",
+    "regulation_target": "legge_132_2025",
+    "regulation_articles": [
+      "art_3"
+    ],
+    "answer_yes_when": "Rispondete SI se effettivamente manca tale registro o è incompleto; la domanda chiede assenza.",
+    "answer_no_when": "Esiste un registro completo e aggiornato contenente timeline, root cause e misure correttive (risposta conforme: NO).",
+    "answer_abstain_when": "Il registro esiste ma non per tutte le tipologie di evento, o manca correlazione con le azioni correttive verificate."
+  },
+  {
+    "question_id": "GDPR-01",
+    "query_text": "Il GDPR si applica al trattamento svolto dal vostro sistema perché, in almeno uno dei casi seguenti, il titolare o il responsabile ha uno stabilimento nell'UE; oppure il trattamento riguarda persone che si trovano nell'UE; oppure il servizio è offerto a persone nell'UE (es. utenti targetizzati in lingua/mercato UE o con possibilità di acquisto nell'UE); oppure il sistema monitora il comportamento di persone mentre esse si trovano nell'UE? (cfr. art. 3 GDPR)",
+    "regulation_target": "gdpr",
+    "regulation_articles": [
+      "art_3"
+    ],
+    "answer_yes_when": "Almeno una delle condizioni elencate nella domanda è vera: sede operativa nell'UE; target di utenti situati nell'UE; offerta di beni/servizi a persone nell'UE; monitoraggio del comportamento nell'UE.",
+    "answer_no_when": "Nessuna delle condizioni è vera: nessuna sede o stabile organizzazione nell'UE, non trattate dati di persone che si trovano nell'UE, non offrite servizi a persone nell'UE e non monitorate il loro comportamento nell'UE.",
+    "answer_abstain_when": "Avete elementi contraddittori (es. utenti UE occasionali, presenza di subfornitori nell'UE ma non di sedi, funzionalità di targeting non configurata ma tecnicamente possibile)."
+  },
+  {
+    "question_id": "GDPR-02",
+    "query_text": "Per ciascuna finalità del trattamento effettuato dal sistema è stata identificata e documentata una base giuridica ai sensi dell'art. 6 GDPR (es. consenso specifico, esecuzione di contratto, obbligo legale, interesse legittimo con valutazione di bilanciamento), e la scelta della base è registrata e accessibile alla funzione di compliance/DPO?",
+    "regulation_target": "gdpr",
+    "regulation_articles": [
+      "art_6"
+    ],
+    "answer_yes_when": "Per ogni finalità esiste un elemento documentale che indica la base giuridica scelta e, se si usa l'interesse legittimo, è disponibile una valutazione di bilanciamento che giustifica la scelta.",
+    "answer_no_when": "Manca la documentazione che colleghi ciascuna finalità a una base giuridica specifica, o la base è invocata senza valutazione o prova (es. nessun consenso registrato quando questo sarebbe necessario).",
+    "answer_abstain_when": "Le basi giuridiche sono indicate in modo generico ma non per ciascuna finalità; o si usano basi alternative senza documentazione completa (es. LIA in bozza)."
+  },
+  {
+    "question_id": "GDPR-03",
+    "query_text": "Il sistema tratta categorie particolari di dati personali (dati che rivelano origine razziale o etnica, opinioni politiche, convinzioni religiose o filosofiche, appartenenza sindacale; dati genetici; dati biometrici intesi a identificare in modo univoco una persona; dati relativi alla salute; dati relativi alla vita sessuale o all'orientamento sessuale)? (cfr. art. 9 GDPR)",
+    "regulation_target": "gdpr",
+    "regulation_articles": [
+      "art_9"
+    ],
+    "answer_yes_when": "Il dataset o i flussi di dati contengono uno o più dei tipi elencati e questi vengono effettivamente trattati dal sistema (addestramento, inference, logging).",
+    "answer_no_when": "Nessuno dei dati elencati è raccolto, conservato o utilizzato dal sistema in nessuna fase (compreso addestramento e logging).",
+    "answer_abstain_when": "I dati sensibili sono presenti in alcune copie dei dataset usati solo per test o in forma pseudonimizzata e non è chiaro se vengano effettivamente usati in produzione; o sono presenti nel dataset ma esclusi nelle pipeline operative."
+  },
+  {
+    "question_id": "GDPR-04",
+    "query_text": "Manca nell'informativa fornita all'interessato, nel momento in cui i suoi dati personali sono raccolti, la specifica che indica l'esistenza di processi decisionali automatizzati (compresa la profilazione) e informazioni significative sulla logica impiegata, sull'importanza e sulle conseguenze previste per l'interessato?",
+    "regulation_target": "gdpr",
+    "regulation_articles": [
+      "art_13"
+    ],
+    "answer_yes_when": "L'informativa al punto di raccolta non indica né l'esistenza di processi decisionali automatizzati né fornisce informazioni significative sulla logica, sull'importanza o sulle conseguenze per l'interessato; oppure tali indicazioni non sono presentate all'interessato nel momento della raccolta.",
+    "answer_no_when": "L'informativa mostrata all'interessato nel momento della raccolta include esplicitamente l'esistenza di processi decisionali automatizzati (compresa la profilazione) e fornisce informazioni significative sulla logica utilizzata, sull'importanza del processo e sulle possibili conseguenze per l'interessato.",
+    "answer_abstain_when": "L'informativa menziona genericamente l'uso di tecnologie automatizzate senza spiegare la logica o le conseguenze; oppure le informazioni sono disponibili solo in una policy estesa collegata tramite link non visibile al punto di raccolta; oppure la descrizione è prevista ma non è documentata con esempio o non è effettivamente mostrata a tutti gli interessati al momento della raccolta. Se scegliete FORSE, descrivete esattamente quale informazione manca o dove è pubblicata."
+  },
+  {
+    "question_id": "GDPR-05",
+    "query_text": "È stata redatta e archiviata prima dell'avvio del trattamento una valutazione d'impatto sulla protezione dei dati (DPIA) quando il trattamento presenta uno dei seguenti casi: impiego di nuove tecnologie; profilazione automatizzata su cui si basano decisioni che producono effetti giuridici o incidono significativamente sulle persone; trattamento su larga scala di categorie particolari di dati o di dati relativi a condanne penali; oppure sorveglianza sistematica su larga scala di aree accessibili al pubblico? La DPIA documenta almeno: una descrizione sistematica dei trattamenti e delle finalità; la valutazione della necessità e proporzionalità; la valutazione dei rischi per i diritti e le libertà; e le misure previste per affrontare i rischi (garanzie, misure di sicurezza, meccanismi di conformità)?",
+    "regulation_target": "gdpr",
+    "regulation_articles": [
+      "art_35"
+    ],
+    "answer_yes_when": "Esiste una DPIA datata e archiviata antecedente all'avvio del trattamento che contiene chiaramente: (1) descrizione dei trattamenti e finalità; (2) valutazione della necessità e proporzionalità; (3) valutazione dei rischi per i diritti e le libertà; (4) misure/garanzie previste per affrontare i rischi.",
+    "answer_no_when": "Non esiste alcuna DPIA per il trattamento in questione, oppure la DPIA è stata redatta solo dopo l'avvio effettivo del trattamento, oppure il documento manca di una o più delle sezioni richieste (descrizione sistematica, valutazione necessità/proporzionalità, valutazione rischi, misure di mitigazione).",
+    "answer_abstain_when": "La DPIA è in corso di redazione; oppure esiste una valutazione generica dei rischi che non documenta esplicitamente le sezioni richieste dalla normativa; oppure la DPIA copre parte dei trattamenti ma non quello specifico; oppure la DPIA è stata aggiornata ma manca evidenza che fosse stata archiviata prima dell'avvio."
+  },
+  {
+    "question_id": "IP_TDM-01",
+    "query_text": "Il vostro corpus di addestramento e/o le basi di conoscenza (prompting index, RAG store) contengono opere o altri materiali ancora protetti dal diritto d'autore (non in pubblico dominio), oppure opere segnalate come orfane?",
+    "regulation_target": "legge_633_1941",
+    "regulation_articles": [
+      "art_12",
+      "art_69_quater"
+    ],
+    "answer_yes_when": "Il manifest/dataset mostra opere con autore identificabile e data di pubblicazione entro i termini di protezione, oppure sono presenti elementi registrati come 'orfani'.",
+    "answer_no_when": "Tutti i contenuti usati risultano in pubblico dominio o sono opere create internamente con titoli chiari; non risultano segnalazioni di opere orfane.",
+    "answer_abstain_when": "Parte del dataset ha metadati incompleti (manca anno o autore), o alcune fonti sono etichettate in modo incerto come 'probabile dominio pubblico' o 'probabile orfane'."
+  },
+  {
+    "question_id": "IP_TDM-02",
+    "query_text": "Le fonti che avete usato per l'addestramento provengono in tutto o in parte da istituti di ricerca, biblioteche, archivi o musei aperti al pubblico (categorie per le quali la legge consente l'estrazione di testo e dati per ricerca scientifica)?",
+    "regulation_target": "legge_633_1941",
+    "regulation_articles": [
+      "art_70_ter"
+    ],
+    "answer_yes_when": "Le sorgenti sono identificate come università, istituto di ricerca, biblioteca o museo aperto al pubblico e avete accesso legittimo ai loro archivi.",
+    "answer_no_when": "Le sorgenti sono dataset commerciali, siti web privati o collezioni proprietarie non riconducibili alle categorie indicate dall'art. 70‑ter.",
+    "answer_abstain_when": "Alcune sorgenti sono partenariati misti (p.es. laboratorio pubblico con partecipazione privata) o il tipo di ente non è documentato nei metadati."
+  },
+  {
+    "question_id": "IP_TDM-03",
+    "query_text": "Per le opere o i materiali coperti da copyright inclusi nel vostro training set è documentato un titolo giuridico che autorizza l'uso (licenza o cessione dei diritti, eccezione applicabile al vostro soggetto, pubblico dominio, o altro titolo scritto)?",
+    "regulation_target": "legge_633_1941",
+    "regulation_articles": [
+      "art_12"
+    ],
+    "answer_yes_when": "Per le opere protette esibite licenze/contratti scritti, certificati di pubblico dominio o un chiaro motivo legale (p.es. siete un organismo di ricerca che rientra nell'art. 70‑ter).",
+    "answer_no_when": "Per una o più opere protette non esiste documentazione che autorizzi l'uso e non ricadete nelle eccezioni previste dalla legge.",
+    "answer_abstain_when": "Avete accordi che non menzionano esplicitamente l'uso per addestramento/modelli, o la documentazione è parziale (es. accordo con un fornitore ma mancano i diritti di riuso per fini commerciali)."
+  },
+  {
+    "question_id": "IP_TDM-04",
+    "query_text": "Per le copie temporanee o permanenti create dall'estrazione di testo e dati sono state applicate misure tecniche e organizzative che ne garantiscano la memorizzazione sicura e l'uso esclusivo per scopi di ricerca, come richiesto dalla normativa?",
+    "regulation_target": "legge_633_1941",
+    "regulation_articles": [
+      "art_70_ter"
+    ],
+    "answer_yes_when": "Esistono policy, storage protetto, controlli di accesso e una lista delle copie create che indica uso solo per ricerca, con audit log disponibili.",
+    "answer_no_when": "Le copie sono salvate nei normali repository di produzione senza restrizioni d'accesso o senza politiche che limitino l'uso a scopi di ricerca.",
+    "answer_abstain_when": "La segregazione è in corso di realizzazione o alcune copie sono protette mentre altre no, oppure mancano log completi."
+  },
+  {
+    "question_id": "IP_TDM-05",
+    "query_text": "Il dataset o le operazioni che hanno alimentato il modello includono opere protette per le quali non esiste alcun titolo giuridico di utilizzo (licenza, pubblico dominio o eccezione applicabile) e per le quali non è stata svolta alcuna ricerca diligente o altra procedura prevista dalla legge?",
+    "regulation_target": "legge_633_1941",
+    "regulation_articles": [
+      "art_12"
+    ],
+    "answer_yes_when": "Non applicabile (la risposta conforme a questa domanda è NO).",
+    "answer_no_when": "Tutti i materiali protetti hanno un titolo di utilizzo documentato oppure sono stati regolarizzati tramite la procedura per opere orfane.",
+    "answer_abstain_when": "Alcune fonti non hanno metadati sufficienti o la verifica è ancora in corso; sono in corso azioni di regolarizzazione."
+  },
+  {
+    "question_id": "SECTOR-01",
+    "query_text": "Il prodotto che incorpora il sistema di IA è disciplinato da una normativa di armonizzazione dell'Unione elencata nell'Allegato I, sezione A (per esempio: regolamento sui dispositivi medici, regolamento sui prodotti macchina, omologazione dei veicoli)?",
+    "regulation_target": "aiact",
+    "regulation_articles": [
+      "allegato_I"
+    ],
+    "answer_yes_when": "Il prodotto è venduto o immesso sul mercato come prodotto regolato da un atto UE di armonizzazione (es. dispositivo medico, macchina, omologazione veicoli) e la documentazione di prodotto o le istruzioni citano esplicitamente quell'atto o il relativo requisito di conformità.",
+    "answer_no_when": "Non esiste alcun atto di armonizzazione UE che si applichi al prodotto; il sistema di IA è messo a disposizione come componente/software indipendente non soggetto alle norme elencate nell'Allegato I, sezione A.",
+    "answer_abstain_when": "Esistono dubbi sul fatto che il prodotto finisca nella definizione del prodotto regolato (es. il sistema IA è venduto insieme a un prodotto regolato ma dichiarato separatamente), oppure la documentazione menziona norme di settore non chiare o solo parti di esse."
+  },
+  {
+    "question_id": "SECTOR-02",
+    "query_text": "Se il prodotto è disciplinato da una normativa di armonizzazione dell'Unione (Allegato I, sezione A), la procedura di valutazione della conformità seguita è quella prevista da quell'atto giuridico (ossia avete applicato la stessa procedura di valutazione del prodotto regolato) e la valutazione include esplicitamente i requisiti della sezione 2 dell'AI Act relativi al vostro sistema di IA?",
+    "regulation_target": "aiact",
+    "regulation_articles": [
+      "art_43"
+    ],
+    "answer_yes_when": "La documentazione di valutazione del prodotto mostra che è stata seguita la procedura di valutazione richiesta dall'atto di armonizzazione applicabile e include controlli/verifiche sui requisiti AI Act (es. requisiti di dati, gestione dei rischi, documentazione tecnica).",
+    "answer_no_when": "La valutazione ha seguito una procedura diversa da quella prevista dall'atto armonizzato, o la documentazione non contiene alcuna verifica dei requisiti AI Act della sezione 2.",
+    "answer_abstain_when": "La procedura applicata è parzialmente conforme (es. alcune fasi della procedura di settore sono state usate ma altre no), o la verifica dei requisiti AI Act è in corso ma non documentata completamente."
+  },
+  {
+    "question_id": "SECTOR-03",
+    "query_text": "Se il prodotto è disciplinato da altra normativa di armonizzazione dell'Unione che richiede una dichiarazione di conformità UE, è stata redatta e conservata una dichiarazione di conformità UE unica che identifica tutte le normative UE applicabili e contiene le informazioni richieste (identificazione del sistema, fornitore, attestazioni di conformità, riferimenti alle norme armonizzate, dati sull'organismo notificato se applicabile), e tale dichiarazione è tenuta a disposizione per il periodo richiesto?",
+    "regulation_target": "aiact",
+    "regulation_articles": [
+      "art_47"
+    ],
+    "answer_yes_when": "Esiste una dichiarazione di conformità UE che elenca tutte le normative di armonizzazione applicabili, include le informazioni richieste dall'Allegato V e viene conservata secondo i termini indicati (es. 10 anni se richiesto).",
+    "answer_no_when": "Non esiste una dichiarazione UE unica, la dichiarazione manca di informazioni richieste dall'Allegato V o non è conservata come previsto.",
+    "answer_abstain_when": "È stata preparata una dichiarazione ma manca la menzione di alcune normative applicabili o mancano riferimenti a norme armonizzate; oppure la conservazione è in corso di sistematizzazione."
+  },
+  {
+    "question_id": "SECTOR-04",
+    "query_text": "Mancano evidenze che le norme armonizzate pubblicate nella Gazzetta Ufficiale dell'UE, riferite ai requisiti della sezione 2 (gestione del rischio, misure di mitigazione, documentazione tecnica, sorveglianza umana, metriche di accuratezza, trasparenza), siano state applicate integralmente e documentate nel fascicolo tecnico per il vostro sistema di IA ad alto rischio?",
+    "regulation_target": "aiact",
+    "regulation_articles": [
+      "art_40"
+    ],
+    "answer_yes_when": "Non esistono nel fascicolo tecnico elenchi o documentazione che provino l'applicazione integrale delle norme armonizzate pubblicate in Gazzetta Ufficiale rispetto ai requisiti della sezione 2, oppure la dichiarazione di conformità afferma l'applicazione ma manca la documentazione che lo dimostri.",
+    "answer_no_when": "Il fascicolo tecnico contiene l'elenco delle norme armonizzate pubblicate in Gazzetta Ufficiale che sono state applicate, con una mappatura chiara che mostra come ciascuna norma copre i requisiti della sezione 2; la dichiarazione di conformità (se presente) riporta i riferimenti alle norme applicate.",
+    "answer_abstain_when": "Avete applicato solo alcune norme armonizzate (non tutte quelle pertinenti), o le norme sono state applicate ma la mappatura verso i requisiti della sezione 2 è parziale o solo a livello di sommario; oppure alcune norme applicate sono state pubblicate con limitazioni e non è chiaro se la parte applicata copra tutti i requisiti."
+  }
+]

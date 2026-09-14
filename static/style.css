@@ -1,0 +1,551 @@
+/* ---------- Basic page setup ---------- */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 15px;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    background: #f3f4f8;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #1f2333;
+    line-height: 1.5;
+}
+
+h2, h3, p {
+    margin: 0;
+}
+
+/* ---------- Left sidebar (navigation) ---------- */
+.sidebar {
+    flex: 0 0 250px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #1c2033;
+    color: #c7cbe0;
+    padding: 1.5rem 1rem;
+    overflow-y: auto;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 0.5rem 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-logo {
+    width: 40px;
+    height: 40px;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4f5bd5;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 10px;
+}
+
+.brand-name {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.2;
+}
+
+.brand-sub {
+    font-size: 0.8rem;
+    color: #8b91b3;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+/* Small grey label above each group of nav buttons */
+.nav-group {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6b7194;
+    padding: 1.1rem 0.75rem 0.35rem;
+}
+
+.nav-group:first-child {
+    padding-top: 0;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 0.6rem 0.75rem;
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #c7cbe0;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+}
+
+.tab-btn.active {
+    background: #4f5bd5;
+    color: #fff;
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding: 1.25rem 0.75rem 0;
+    font-size: 0.8rem;
+    color: #6b7194;
+}
+
+/* ---------- Main content area (everything right of the sidebar) ---------- */
+.main {
+    flex: 1 1 auto;
+    min-width: 0;            /* lets wide tables scroll instead of pushing the page */
+    padding: 2.25rem 2.5rem 3rem;
+}
+
+.tab-content {
+    display: none;
+    max-width: 1400px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Title + description at the top of each section, with optional buttons on the right */
+.page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+}
+
+.page-header h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.25rem;
+}
+
+.page-header p {
+    color: #6b7280;
+    max-width: 720px;
+}
+
+/* ---------- Panels: white boxes that hold each block of content ---------- */
+.panel {
+    background: #fff;
+    border: 1px solid #e4e6ef;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+    margin-bottom: 1.5rem;
+}
+
+.panel h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Title/description on the left, action button on the right */
+.panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.panel-head h3 {
+    margin-bottom: 0.2rem;
+}
+
+.panel-head p,
+.muted {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+/* Two panels side by side (form on the left, result on the right) */
+.two-col {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.two-col .panel {
+    margin-bottom: 0;
+}
+
+/* ---------- Button ---------- */
+/* inline-flex so this class also works on a <label> (see the file picker below),
+   which is an inline element by default and would ignore the padding. */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #4f5bd5;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover {
+    background: #4450c9;
+    box-shadow: 0 6px 14px rgba(79, 91, 213, 0.28);
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+/* A quieter version of .btn, for secondary actions like "Choose file" */
+.btn-ghost {
+    background: #eef2ff;
+    color: #4f5bd5;
+}
+
+.btn-ghost:hover {
+    background: #e3e9ff;
+    box-shadow: 0 4px 10px rgba(79, 91, 213, 0.15);
+}
+
+.btn-small {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.8rem;
+}
+
+.toolbar {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+/* ---------- Overview stat cards ---------- */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #e4e6ef;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+.stat-value {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+/* Green status dot */
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+}
+
+/* ---------- Tables ---------- */
+/* The table sits in a panel with no padding so the header row reaches the edges */
+.table-panel {
+    padding: 0;
+    overflow-x: auto;
+}
+
+.doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.doc-table th,
+.doc-table td {
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid #eceef5;
+    font-size: 0.9rem;
+    vertical-align: top;
+}
+
+.doc-table th {
+    background: #f8f9fc;
+    color: #6b7280;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.doc-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.doc-table tbody tr:hover td {
+    background: #fafbff;
+}
+
+/* ---------- File picker (Upload tab) ----------
+   Browsers style <input type="file"> themselves and it can't be restyled, so
+   the usual trick is: hide the real input and show a <label> that points at it.
+   Clicking a label activates the input it points at, so the label acts as the
+   button while the input keeps doing the actual work. */
+.file-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Hidden from view, but NOT display:none - that would take it out of the
+   keyboard tab order and make the picker unreachable without a mouse. */
+.file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+/* Keyboard focus lands on the hidden input, so show the ring on the label */
+.file-input:focus-visible + .btn-ghost {
+    box-shadow: 0 0 0 3px rgba(79, 91, 213, 0.35);
+}
+
+.file-name {
+    font-size: 0.9rem;
+    color: #6b7280;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+/* ---------- Text field (document type on the Upload tab) ---------- */
+.field-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.field-label span {
+    font-weight: 400;
+    color: #9ca3af;
+}
+
+.text-input {
+    display: block;
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #d8dcea;
+    border-radius: 10px;
+    font: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.text-input:focus,
+.question-input:focus {
+    border-color: #4f5bd5;
+    box-shadow: 0 0 0 3px rgba(79, 91, 213, 0.15);
+}
+
+/* ---------- Question input (Chat tab) ---------- */
+.question-input {
+    display: block;
+    width: 100%;
+    min-height: 140px;
+    resize: vertical;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1rem;
+    background: #fff;
+    border: 1px solid #d8dcea;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #1f2333;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.question-input::placeholder,
+.text-input::placeholder {
+    color: #9ca3af;
+}
+
+/* ---------- Boxes that show a response ---------- */
+/* Shared frame for both result boxes */
+.answerBox,
+.result-box {
+    margin: 0;
+    background: #f8f9fc;
+    border: 1px solid #e4e6ef;
+    border-radius: 10px;
+    padding: 1rem 1.15rem;
+    text-align: left;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: #374151;
+    min-height: 140px;
+    max-height: 520px;
+    overflow-y: auto;
+}
+
+/* The model's answer is prose, so a normal font reads better than monospace */
+.answerBox {
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* The upload result is raw JSON, so monospace is the right choice here */
+.result-box {
+    font-family: "Consolas", monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* The index rebuild result only appears after clicking the button */
+.panel-head + .result-box {
+    margin-top: 1.25rem;
+}
+
+/* ---------- Questionnaire tab ---------- */
+/* Question text is long: keep it readable but let the table stay one screen wide */
+.q-text {
+    min-width: 320px;
+    max-width: 620px;
+    line-height: 1.45;
+    cursor: pointer;
+}
+
+.q-text:hover {
+    color: #4f5bd5;
+}
+
+.q-answer {
+    max-width: 260px;
+}
+
+/* Status pill: answered (green), NA (grey), running (blue), error (red) */
+.pill {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.pill-answered { background: #dcfce7; color: #166534; }
+.pill-na       { background: #e5e7eb; color: #374151; }
+.pill-running  { background: #dbeafe; color: #1e40af; }
+.pill-error    { background: #fee2e2; color: #991b1b; }
+
+/* ---------- Narrower screens ---------- */
+@media (max-width: 1000px) {
+    .two-col {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    /* Sidebar becomes a top bar with wrapping nav buttons */
+    .sidebar {
+        flex: none;
+        position: static;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .brand {
+        padding-bottom: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+    }
+
+    .nav-group,
+    .sidebar-footer {
+        display: none;
+    }
+
+    .main {
+        padding: 1.5rem 1rem 2rem;
+    }
+
+    .page-header h2 {
+        font-size: 1.35rem;
+    }
+
+    .panel {
+        padding: 1.25rem;
+    }
+}

@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+jinja2
+python-multipart
+llama-index-core
+llama-index-llms-openrouter
+python-dotenv
+llama-index-readers-file
+llama-index-embeddings-google-genai
+
+# Dev-only, used by scripts/make_test_pdfs.py to generate test documents
+# fpdf2
